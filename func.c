@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+
+void printVal(int num, float real) {
+    printf("%d %f \n", num, real);
+}
 void hello() {
     printf("hello world;\n");
 }
@@ -15,8 +19,12 @@ int four() {
 }
 
 int main () {
+    int a = 3;
     int num = four();
     hello();
-    printf("%d \n %d ", three(), num);
+    printf("%d \n %d\n ", three(), num);
+
+    printVal(a, 1.5);
+
     return 0;
 }
