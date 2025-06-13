@@ -3,32 +3,21 @@
 
 
 int main() {
-
-    // file pointer to store the 
-    // value return by fopen
-
     FILE* fptr;
 
-    char data[50] = "okure enock is "
-                    "the seed of Abraham";
-    // opening the file in read mode
-    fptr = fopen("okure.txt", "w");
-
-    // checking if the file is 
-    // open successfully
+    char data[50];
+    fptr = fopen("okure.txt", "r");
 
     if (fptr == NULL) {
-        printf("the file is not opened");
+        printf("file.txt file failed to open");
     } else {
-        printf("the file is created");
+        printf("The file is now opened.\n");
 
-        fputs(data, fptr);
+        while (fgets(data, 50, fptr) != NULL) {
+            printf("%s", data);
+        }
 
         fclose(fptr);
-        printf("data successfully writen");
-        
-
-
     }
     return 0;
 }
