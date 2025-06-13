@@ -9,6 +9,8 @@ int main() {
 
     FILE* fptr;
 
+    char data[50] = "okure enock is "
+                    "the seed of Abraham";
     // opening the file in read mode
     fptr = fopen("okure.txt", "w");
 
@@ -19,6 +21,14 @@ int main() {
         printf("the file is not opened");
     } else {
         printf("the file is created");
+
+        fputs(data, fptr);
+
+        fclose(fptr);
+        printf("data successfully writen");
+        
+
+
     }
     return 0;
 }
